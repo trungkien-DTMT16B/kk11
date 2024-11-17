@@ -150,7 +150,7 @@
             
                 series: [{
                     name: 'Speed',
-                    data: [doAmValue],
+                    data: [0],
                     tooltip: {
                         valueSuffix: ' km/h'
                     },
@@ -201,8 +201,8 @@
             
             const eraWidget = new EraWidget();
             let config = null;
-            let doAmValue = 0; // Khởi tạo giá trị nhịp tim mặc định
-            //const dataBuffer = [];
+            let doAmValue = 1; // Khởi tạo giá trị nhịp tim mặc định
+            const dataBuffer = [];
             eraWidget.onConfiguration((configuration) => {
                 config = configuration.realtime_configs[0];
             });
