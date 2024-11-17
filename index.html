@@ -70,9 +70,9 @@
             </p>
         </figure>
 
-        <input type="checkbox" id="doAm"></input>
+        <input type="checkbox" id="doAm" />
         <script>
-            const eraWidget = new EraWidget();
+           /* const eraWidget = new EraWidget();
             let config = null;
             let doAmValue = 0; // Khởi tạo giá trị nhịp tim mặc định
             const dataBuffer = [];
@@ -86,7 +86,7 @@
                 input.checked = values[config.id].value > 0; // Đặt trạng thái của checkbox dựa trên nhịp tim
             });
 
-            eraWidget.ready();
+            eraWidget.ready(); */
 
             Highcharts.chart('container', {
 
@@ -198,7 +198,22 @@
                 }
             
             }, 3000);
+            
+            const eraWidget = new EraWidget();
+            let config = null;
+            let doAmValue = 0; // Khởi tạo giá trị nhịp tim mặc định
+            //const dataBuffer = [];
+            eraWidget.onConfiguration((configuration) => {
+                config = configuration.realtime_configs[0];
+            });
 
+            eraWidget.onValues((values) => {
+                const input = document.getElementById('doAm');
+                doAmValue = values[config.id].value; // Giả sử values[config.id].value là nhịp tim thực tế
+                input.checked = values[config.id].value > 0; // Đặt trạng thái của checkbox dựa trên nhịp tim
+            });
+
+            eraWidget.ready(); 
         </script>
         
 
