@@ -201,7 +201,7 @@
             
             const eraWidget = new EraWidget();
             let config = null;
-            let doAmValue = 1; // Khởi tạo giá trị nhịp tim mặc định
+            let doAmValue = doAm; // Khởi tạo giá trị nhịp tim mặc định
             const dataBuffer = [];
             eraWidget.onConfiguration((configuration) => {
                 config = configuration.realtime_configs[0];
