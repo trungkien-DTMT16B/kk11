@@ -157,7 +157,7 @@
             },
 
             title: {
-                text: 'Live Heartbeat Data'
+                text: 'Biểu Đồ Giá Trị Độ Ẩm'
             },
 
             accessibility: {
@@ -181,10 +181,10 @@
 
             yAxis: {
                 title: {
-                    text: 'Heartbeat'
+                    text: 'Giá trị độ ẩm'
                 },
                 min: 0, // Giá trị tối thiểu của trục Y
-                max: 130, // Giá trị tối đa của trục Y
+                max: 100, // Giá trị tối đa của trục Y
                 tickInterval: 10, // Khoảng cách giữa các dấu vạch trên trục Y
                 plotLines: [
                     {
@@ -197,7 +197,8 @@
 
             tooltip: {
                 headerFormat: '<b>{series.name}</b><br/>',
-                pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
+                //pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
+                pointFormat: '{point.x:%d-%m-%Y %S:%M:%H}<br/>{point.y:.2f}'
             },
 
             legend: {
@@ -210,7 +211,7 @@
 
             series: [
                 {
-                    name: 'Heartbeats',
+                    name: 'Độ Ẩm',
                     lineWidth: 2,
                     color: Highcharts.getOptions().colors[6],
                     data,
